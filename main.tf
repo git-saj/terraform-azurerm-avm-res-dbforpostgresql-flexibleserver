@@ -75,6 +75,10 @@ resource "azurerm_postgresql_flexible_server" "this" {
       update = timeouts.value.update
     }
   }
+
+  lifecycle {
+    ignore_changes = [ version ]
+  }
 }
 
 # required AVM resources interfaces
